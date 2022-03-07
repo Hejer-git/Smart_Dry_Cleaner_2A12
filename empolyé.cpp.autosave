@@ -1,0 +1,6 @@
+#include "empolyé.h"
+
+emply::emply()
+{
+
+}

@@ -1,0 +1,17 @@
+#ifndef EMPLY_H
+#define EMPLY_H
+#include<QString>
+
+class emply
+{
+public: 
+    void setNom(QString n );
+    void setPrénom(QString n);
+    void setLogin(QString n);
+    void setMotdepasse(QString n);
+    void setSalaire(QString n);
+    void setNombredheuresparmois(int n )
+    emply();
+};
+
+#endif // EMPLY_H
