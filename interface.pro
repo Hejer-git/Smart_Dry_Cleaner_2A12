@@ -1,5 +1,6 @@
 QT       += core gui sql
 
+
 QT += printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
@@ -21,6 +22,7 @@ SOURCES += \
     alert.cpp \
     connection.cpp \
     historique.cpp \
+    historique.cpp \
     machine.cpp \
     main.cpp \
     mainwindow.cpp
@@ -28,6 +30,7 @@ SOURCES += \
 HEADERS += \
     alert.h \
     connection.h \
+    historique.h \
     historique.h \
     machine.h \
     mainwindow.h

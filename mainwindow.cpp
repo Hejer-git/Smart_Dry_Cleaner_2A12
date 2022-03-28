@@ -9,6 +9,7 @@
 #include <QTextDocument>
 #include"alert.h"
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)

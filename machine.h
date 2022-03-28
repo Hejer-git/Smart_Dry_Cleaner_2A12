@@ -5,6 +5,7 @@
 #include<QSqlQueryModel>
 #include <QTableView>
 #include "historique.h"
+
 class machine
 {
 private:

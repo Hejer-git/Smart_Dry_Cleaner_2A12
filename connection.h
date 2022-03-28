@@ -3,6 +3,7 @@
 #include <QSqlDatabase>
 
 
+
 class Connection
 { QSqlDatabase db;
 public:

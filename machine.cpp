@@ -3,6 +3,7 @@
 #include <QtDebug>
 #include <QObject>
 
+
 machine::machine()
 {
     id_machine=0;
