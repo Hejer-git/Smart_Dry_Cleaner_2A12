@@ -4,6 +4,7 @@
 #include <QtDebug>
 #include <QObject>
 
+
 Employe::Employe(int Id_Emp,QString Nom_Emp,QString Prenom_Emp,QString Fonction,int Num_TelE,int Salaire,int Nbr_heures)
  {
                    this->Id_Emp=Id_Emp;
