@@ -4,7 +4,6 @@
 #include <QtDebug>
 #include <QObject>
 
-
 Employe::Employe(int Id_Emp,QString Nom_Emp,QString Prenom_Emp,QString Fonction,int Num_TelE,int Salaire,int Nbr_heures)
  {
                    this->Id_Emp=Id_Emp;
@@ -75,5 +74,60 @@ bool Employe::modifier()
    return query.exec();
 }
 
+QSqlQueryModel * Employe::rechercher1( QString a)
+{
+    QSqlQueryModel * query=new QSqlQueryModel();
+        query->setQuery("select * from EMPLOYE where (NOM_EMP like '%"+a+"%' ) ");
+        return    query;
+}
+QSqlQueryModel * Employe::rechercher2( QString b)
+{
+    QSqlQueryModel * query=new QSqlQueryModel();
+        query->setQuery("select * from EMPLOYE where (PRENOM_EMP like '%"+b+"%' ) ");
+        return    query;
+}
+QSqlQueryModel * Employe::rechercher3( QString x)
+{
+    QSqlQueryModel * query=new QSqlQueryModel();
+        query->setQuery("select * from EMPLOYE where (FONCTION like '%"+x+"%' ) ");
+        return    query;
+}
+QSqlQueryModel * Employe::trier1()
+{QSqlQueryModel * model= new QSqlQueryModel();
 
+model->setQuery("select * from EMPLOYE order by NOM_EMP");
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID_EMP"));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("NOM_EMP"));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("PRENOM_EMP"));
+model->setHeaderData(4, Qt::Horizontal, QObject::tr("FONCTION"));
+model->setHeaderData(5, Qt::Horizontal, QObject::tr("NUM_TELE"));
+model->setHeaderData(6, Qt::Horizontal, QObject::tr("SALAIRE"));
+model->setHeaderData(7, Qt::Horizontal, QObject::tr("NBR_HEURES"));
+    return model;
+}
+QSqlQueryModel * Employe::trier2()
+{QSqlQueryModel * model= new QSqlQueryModel();
 
+model->setQuery("select * from EMPLOYE order by SALAIRE");
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID_EMP"));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("NOM_EMP"));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("PRENOM_EMP"));
+model->setHeaderData(4, Qt::Horizontal, QObject::tr("FONCTION"));
+model->setHeaderData(5, Qt::Horizontal, QObject::tr("NUM_TELE"));
+model->setHeaderData(6, Qt::Horizontal, QObject::tr("SALAIRE"));
+model->setHeaderData(7, Qt::Horizontal, QObject::tr("NBR_HEURES"));
+    return model;
+}
+QSqlQueryModel * Employe::trier3()
+{QSqlQueryModel * model= new QSqlQueryModel();
+
+model->setQuery("select * from EMPLOYE order by NBR_HEURES");
+model->setHeaderData(1, Qt::Horizontal, QObject::tr("ID_EMP"));
+model->setHeaderData(2, Qt::Horizontal, QObject::tr("NOM_EMP"));
+model->setHeaderData(3, Qt::Horizontal, QObject::tr("PRENOM_EMP"));
+model->setHeaderData(4, Qt::Horizontal, QObject::tr("FONCTION"));
+model->setHeaderData(5, Qt::Horizontal, QObject::tr("NUM_TELE"));
+model->setHeaderData(6, Qt::Horizontal, QObject::tr("SALAIRE"));
+model->setHeaderData(7, Qt::Horizontal, QObject::tr("NBR_HEURES"));
+    return model;
+}

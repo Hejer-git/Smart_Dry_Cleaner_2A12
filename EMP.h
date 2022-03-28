@@ -27,6 +27,18 @@ private slots:
 
     void on_pushButtonmodif_clicked();
 
+    void on_pushButtonRnom_clicked();
+
+    void on_pushButtonRprenom_clicked();
+
+    void on_pushButtonRfonction_clicked();
+
+    void on_pushButtonTnom_clicked();
+
+    void on_pushButtonTsalaire_clicked();
+
+    void on_pushButtonTnbh_clicked();
+
 private:
     Ui::EMP *ui;
     Employe Emp ;

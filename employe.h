@@ -39,7 +39,12 @@ private:
     QSqlQueryModel * afficher();
     bool supprimer(int);
     bool modifier();
-
+    QSqlQueryModel *rechercher1(QString);
+    QSqlQueryModel *rechercher2(QString);
+    QSqlQueryModel *rechercher3(QString);
+    QSqlQueryModel * trier1();//par ordre alphabétique
+    QSqlQueryModel * trier2();//men asgher lel akber
+     QSqlQueryModel * trier3();//men asgher lel akber
 };
 
 #endif // EMPLOYE_H

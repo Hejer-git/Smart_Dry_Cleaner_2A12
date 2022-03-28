@@ -462,7 +462,7 @@ background-color: rgb(0, 74, 108);</string>
    <property name="title">
     <string>Rechercher les employés</string>
    </property>
-   <widget class="QPushButton" name="pushButton_Rprenom">
+   <widget class="QPushButton" name="pushButtonRprenom">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -516,7 +516,7 @@ background-color: rgb(0, 74, 108);</string>
      <string>Par Nom </string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButtonRsalaire">
+   <widget class="QPushButton" name="pushButtonRfonction">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -540,7 +540,7 @@ font-family:calibri;
 background-color: rgb(0, 74, 108);</string>
     </property>
     <property name="text">
-     <string> Par Salaire</string>
+     <string> Par Fonction</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lineEditRN">
@@ -571,7 +571,7 @@ border-radius: 10px;</string>
 border-radius: 10px;</string>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEditRS">
+   <widget class="QLineEdit" name="lineEditRF">
     <property name="geometry">
      <rect>
       <x>190</x>

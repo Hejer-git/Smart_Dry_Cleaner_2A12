@@ -123,3 +123,38 @@ void EMP::on_pushButtonmodif_clicked()
                               QObject::tr("modification non effectuée\n ""Click Cancel to exit."),QMessageBox::Cancel);
     }
 }
+
+void EMP::on_pushButtonRnom_clicked()
+{
+    QString Nom_Emp = ui->lineEditRN->text();
+    ui->tableViewaff->setModel(Emp.rechercher1(Nom_Emp));
+
+}
+
+void EMP::on_pushButtonRprenom_clicked()
+{
+    QString Prenom_Emp = ui->lineEditRP->text();
+    ui->tableViewaff->setModel(Emp.rechercher2(Prenom_Emp));
+}
+
+
+void EMP::on_pushButtonRfonction_clicked()
+{
+    QString Fonction= ui->lineEditRF->text();
+    ui->tableViewaff->setModel(Emp.rechercher3(Fonction));
+}
+
+void EMP::on_pushButtonTnom_clicked()
+{
+    ui->tableViewaff->setModel(Emp.trier1());
+}
+
+void EMP::on_pushButtonTsalaire_clicked()
+{
+    ui->tableViewaff->setModel(Emp.trier2());
+}
+
+void EMP::on_pushButtonTnbh_clicked()
+{
+    ui->tableViewaff->setModel(Emp.trier3());
+}
