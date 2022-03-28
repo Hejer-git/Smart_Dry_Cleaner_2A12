@@ -3,7 +3,8 @@
 #include<QString>
 #include<QSqlQuery>
 #include<QSqlQueryModel>
-
+#include <QTableView>
+#include "historique.h"
 class machine
 {
 private:
@@ -38,6 +39,16 @@ public:
     QSqlQueryModel * afficher();
     bool supprimer (int);
     bool modifiermachine();
+    QSqlQueryModel * tri_prixASC();
+    QSqlQueryModel * tri_prixDEC();
+    QSqlQueryModel * tri_libelle();
+    QSqlQueryModel * recherche1(QString);
+    QSqlQueryModel * recherche2(QString);
+    QSqlQueryModel * recherche3(QString);
+    QString  apercu_pdf();
+
+ historique h;
+
 
 
 

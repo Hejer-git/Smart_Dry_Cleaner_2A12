@@ -83,4 +83,96 @@ bool machine::modifiermachine()
             return query.exec();
 }
 
+QSqlQueryModel * machine::tri_libelle()
+{QSqlQueryModel * model= new QSqlQueryModel();
 
+model->setQuery("select * from MACHINE order by LIBELLE_M asc");
+model->setHeaderData(0,Qt::Horizontal,QObject::tr("id_machine"));
+model->setHeaderData(1,Qt::Horizontal,QObject::tr("libelle_M"));
+model->setHeaderData(2,Qt::Horizontal,QObject::tr("fournisseur_M"));
+model->setHeaderData(3,Qt::Horizontal,QObject::tr("etat_M"));
+model->setHeaderData(4,Qt::Horizontal,QObject::tr("qte_M"));
+model->setHeaderData(5,Qt::Horizontal,QObject::tr("prix_M"));
+model->setHeaderData(6,Qt::Horizontal,QObject::tr("id_emp"));
+    return model;
+}
+
+
+QSqlQueryModel * machine::tri_prixDEC()
+{QSqlQueryModel * model= new QSqlQueryModel();
+
+model->setQuery("select * from MACHINE order by PRIX_M desc");
+model->setHeaderData(0,Qt::Horizontal,QObject::tr("id_machine"));
+model->setHeaderData(1,Qt::Horizontal,QObject::tr("libelle_M"));
+model->setHeaderData(2,Qt::Horizontal,QObject::tr("fournisseur_M"));
+model->setHeaderData(3,Qt::Horizontal,QObject::tr("etat_M"));
+model->setHeaderData(4,Qt::Horizontal,QObject::tr("qte_M"));
+model->setHeaderData(5,Qt::Horizontal,QObject::tr("prix_M"));
+model->setHeaderData(6,Qt::Horizontal,QObject::tr("id_emp"));
+    return model;
+}
+
+
+QSqlQueryModel * machine::tri_prixASC()
+{QSqlQueryModel * model= new QSqlQueryModel();
+
+model->setQuery("select * from MACHINE order by PRIX_M asc");
+model->setHeaderData(0,Qt::Horizontal,QObject::tr("id_machine"));
+model->setHeaderData(1,Qt::Horizontal,QObject::tr("libelle_M"));
+model->setHeaderData(2,Qt::Horizontal,QObject::tr("fournisseur_M"));
+model->setHeaderData(3,Qt::Horizontal,QObject::tr("etat_M"));
+model->setHeaderData(4,Qt::Horizontal,QObject::tr("qte_M"));
+model->setHeaderData(5,Qt::Horizontal,QObject::tr("prix_M"));
+model->setHeaderData(6,Qt::Horizontal,QObject::tr("id_emp"));
+    return model;
+}
+
+
+QSqlQueryModel * machine::recherche1( QString a)
+{
+    QSqlQueryModel * query=new QSqlQueryModel();
+        query->setQuery("select * from MACHINE where (prix_M like '%"+a+"%' ) ");
+        return    query;
+}
+
+QSqlQueryModel * machine::recherche2( QString b)
+{
+    QSqlQueryModel * query=new QSqlQueryModel();
+        query->setQuery("select * from MACHINE where (libelle_M like '%"+b+"%' ) ");
+        return    query;
+}
+
+QSqlQueryModel * machine::recherche3( QString c)
+{
+    QSqlQueryModel * query=new QSqlQueryModel();
+        query->setQuery("select * from MACHINE where (etat_M like '%"+c+"%' ) ");
+        return    query;
+}
+
+
+QString machine::  apercu_pdf()
+{
+
+    QString text="            ******* LES MACHINES  ********       \n \n " ;
+    QSqlQuery query ;
+    QString i,x,z,n,t,p;
+
+
+     query.exec("select * from MACHINE ");
+     while (query.next())
+     {
+         i=query.value(0).toString();
+         x=query.value(1).toString();
+         z=query.value(2).toString();
+         n=query.value(3).toString();
+         t=query.value(4).toString();
+         p=query.value(5).toString();
+
+       text += "\n - id_machine : "+i+"\n - libelle_M : "+ x+"\n  - Fournisseur_M : "+ z+"\n - Etat_M : "+ n+"\n  - Qte_M : "+t+"\n  -  Prix_M : "+p+"\n______________\n";
+
+
+
+    }
+
+            return text ;
+}

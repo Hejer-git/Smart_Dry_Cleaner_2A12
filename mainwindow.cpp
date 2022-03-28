@@ -3,6 +3,12 @@
 #include <QMessageBox>
 #include "machine.h"
 #include <QIntValidator>
+#include <QPrinter>
+#include <QPrintDialog>
+#include"historique.h"
+#include <QTextDocument>
+#include"alert.h"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -24,11 +30,15 @@ void MainWindow::on_pushButton_VAL_AJ_clicked()
     int prix_M = ui->lineEdit_9->text().toInt();
     int qte_M = ui->lineEdit_5->text().toInt();
     int id_emp = ui->lineEdit_12->text().toInt();
+      int idR;
+    QString textajouter;//historique
+    historique h;
 
     machine M(id_machine,libelle_M,fourisseur_M,etat_M,qte_M,prix_M,id_emp);
     bool test=M.ajouter();
     if(test)
     {
+
         //actualisation
         ui->tableView->setModel(m.afficher());
 
@@ -36,10 +46,26 @@ void MainWindow::on_pushButton_VAL_AJ_clicked()
 
     }
     else
-        QMessageBox::critical(nullptr, QObject::tr("Not OK"), QObject::tr("Ajout non effectué\n"
-                            "Click Cancel to exit."), QMessageBox::Cancel);
+       { QMessageBox::critical(nullptr, QObject::tr("Not OK"), QObject::tr("Ajout non effectué\n"
+                            "Click Cancel to exit."), QMessageBox::Cancel);}
 
+
+    //ajout historique
+         QSqlQuery qry;
+         qry.prepare("select * from MACHINE");
+         if (qry.exec())
+         {
+             while (qry.next())
+             {
+     idR =qry.value(3).toInt();
+             }
+         }
+
+         textajouter="L'ajout d'une machine dans la base de donnees d'e nom'etat = "+QString::number(idR)+" a ete effectuee avec succees";
+         h.write(textajouter);
 }
+
+
 void MainWindow::on_pushButton_2_clicked()
 {
     int id_machine=ui->lineEdit_11->text().toInt();
@@ -53,8 +79,25 @@ void MainWindow::on_pushButton_2_clicked()
                          "Click Cancel to exit."), QMessageBox::Cancel);
          }
          else
-             QMessageBox::critical(nullptr, QObject::tr("Not OK"), QObject::tr("Suppression non effectuée\n"
-                         "Click Cancel to exit."), QMessageBox::Cancel);
+          {   QMessageBox::critical(nullptr, QObject::tr("Not OK"), QObject::tr("Suppression non effectuée\n"
+                         "Click Cancel to exit."), QMessageBox::Cancel);}
+    QString textajouter;
+   int idR;
+           historique h;
+           QSqlQuery qry;
+           qry.prepare("select * from MACHINE");
+           if (qry.exec())
+           {
+
+               while (qry.next())
+               {
+       idR =qry.value(3).toInt();
+               }
+           }
+
+           textajouter="La supression d'une machine de la base de donnees d'etat = "+QString::number(idR)+" a ete effectuee avec succees";
+           h.write(textajouter);
+
 
 }
 void MainWindow::on_pushButton_3_clicked()
@@ -77,8 +120,24 @@ void MainWindow::on_pushButton_3_clicked()
 
     }
     else
-        QMessageBox::critical(nullptr, QObject::tr("Not OK"), QObject::tr("modif non effectué\n"
-                            "Click Cancel to exit."), QMessageBox::Cancel);
+       { QMessageBox::critical(nullptr, QObject::tr("Not OK"), QObject::tr("modif non effectué\n"
+                            "Click Cancel to exit."), QMessageBox::Cancel);}
+    QString textajouter;
+   int idR;
+           historique h;
+           QSqlQuery qry;
+           qry.prepare("select * from MACHINE");
+           if (qry.exec())
+           {
+
+               while (qry.next())
+               {
+       idR =qry.value(3).toInt();
+               }
+           }
+
+           textajouter="La modification d'une machine de la base de donnees d'etat = "+QString::number(idR)+" a ete effectuee avec succees";
+           h.write(textajouter);
 
 }
 
@@ -108,4 +167,65 @@ void MainWindow::on_tableView_activated(const QModelIndex &index)
     id_machine=ui->tableView->model()->data(index).toInt();
     QSqlQuery qry;
 
+}
+
+void MainWindow::on_pushButton_22_clicked()
+{
+
+ui->tableView->setModel(m.tri_prixASC());
+
+
+}
+
+void MainWindow::on_pushButton_21_clicked()
+{
+    ui->tableView->setModel(m.tri_prixDEC());
+}
+
+void MainWindow::on_pushButton_23_clicked()
+{
+    ui->tableView->setModel(m.tri_libelle());
+}
+
+
+
+void MainWindow::on_pushButton_25_clicked()
+{
+
+    QString prix_M = ui->lineEdit_6->text();
+    ui->tableView->setModel(m.recherche1(prix_M));
+}
+
+void MainWindow::on_pushButton_24_clicked()
+{
+
+    QString libelle_M = ui->lineEdit_7->text();
+    ui->tableView->setModel(m.recherche2(libelle_M));
+}
+
+void MainWindow::on_pushButton_26_clicked()
+{
+
+    QString etat_M = ui->lineEdit_10->text();
+    ui->tableView->setModel(m.recherche3(etat_M));
+}
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    machine m;
+              QString text=m.apercu_pdf();
+              ui->textEdit->setText(text);
+
+              QPrinter printer ;
+              printer.setPrinterName("imprimer");
+              QPrintDialog dialog (&printer,this);
+              if(dialog.exec()==QDialog::Rejected) return ;
+             ui->textEdit->print(&printer);
+}
+
+void MainWindow::on_pushButton_12_clicked()
+{
+    historique h;
+    ui->textBrowser->show();
+    ui->textBrowser->setPlainText(h.read());
 }

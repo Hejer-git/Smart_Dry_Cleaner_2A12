@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1282</width>
-    <height>685</height>
+    <width>1471</width>
+    <height>688</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,8 +19,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>1281</width>
-      <height>631</height>
+      <width>1481</width>
+      <height>641</height>
      </rect>
     </property>
     <property name="text">
@@ -33,9 +33,9 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>10</y>
-      <width>511</width>
+      <width>421</width>
       <height>391</height>
      </rect>
     </property>
@@ -49,8 +49,8 @@
     <widget class="QPushButton" name="pushButton_VAL_AJ">
      <property name="geometry">
       <rect>
-       <x>320</x>
-       <y>330</y>
+       <x>270</x>
+       <y>320</y>
        <width>93</width>
        <height>28</height>
       </rect>
@@ -76,7 +76,7 @@ background-color: rgb(0, 74, 108);</string>
     <widget class="QPushButton" name="pushButton_QUIT_AJ">
      <property name="geometry">
       <rect>
-       <x>320</x>
+       <x>270</x>
        <y>360</y>
        <width>93</width>
        <height>28</height>
@@ -103,8 +103,8 @@ background-color: rgb(0, 74, 108);</string>
     <widget class="QLineEdit" name="lineEdit">
      <property name="geometry">
       <rect>
-       <x>280</x>
-       <y>50</y>
+       <x>160</x>
+       <y>60</y>
        <width>201</width>
        <height>21</height>
       </rect>
@@ -182,7 +182,7 @@ border-radius: 10px;</string>
     <widget class="QLineEdit" name="lineEdit_2">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>160</x>
        <y>90</y>
        <width>201</width>
        <height>21</height>
@@ -196,7 +196,7 @@ border-radius: 10px;</string>
     <widget class="QLineEdit" name="lineEdit_3">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>160</x>
        <y>130</y>
        <width>201</width>
        <height>21</height>
@@ -210,7 +210,7 @@ border-radius: 10px;</string>
     <widget class="QLineEdit" name="lineEdit_4">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>160</x>
        <y>170</y>
        <width>201</width>
        <height>21</height>
@@ -224,7 +224,7 @@ border-radius: 10px;</string>
     <widget class="QLineEdit" name="lineEdit_5">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>160</x>
        <y>210</y>
        <width>201</width>
        <height>21</height>
@@ -251,7 +251,7 @@ border-radius: 10px;</string>
     <widget class="QLineEdit" name="lineEdit_9">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>160</x>
        <y>250</y>
        <width>201</width>
        <height>21</height>
@@ -278,7 +278,7 @@ border-radius: 10px;</string>
     <widget class="QLineEdit" name="lineEdit_12">
      <property name="geometry">
       <rect>
-       <x>280</x>
+       <x>160</x>
        <y>290</y>
        <width>201</width>
        <height>21</height>
@@ -293,10 +293,10 @@ border-radius: 10px;</string>
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>50</y>
-      <width>581</width>
-      <height>281</height>
+      <x>440</x>
+      <y>20</y>
+      <width>601</width>
+      <height>261</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -311,7 +311,7 @@ border-radius: 10px;</string>
       <rect>
        <x>20</x>
        <y>20</y>
-       <width>551</width>
+       <width>571</width>
        <height>231</height>
       </rect>
      </property>
@@ -324,8 +324,8 @@ border-radius: 10px;</string>
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
      <rect>
-      <x>520</x>
-      <y>340</y>
+      <x>440</x>
+      <y>280</y>
       <width>551</width>
       <height>91</height>
      </rect>
@@ -422,9 +422,9 @@ border-radius: 10px;</string>
    <widget class="QGroupBox" name="groupBox_4">
     <property name="geometry">
      <rect>
-      <x>1080</x>
-      <y>340</y>
-      <width>181</width>
+      <x>890</x>
+      <y>500</y>
+      <width>151</width>
       <height>80</height>
      </rect>
     </property>
@@ -466,7 +466,7 @@ background-color: rgb(0, 74, 108);</string>
    <widget class="QGroupBox" name="groupBox_11">
     <property name="geometry">
      <rect>
-      <x>600</x>
+      <x>400</x>
       <y>450</y>
       <width>241</width>
       <height>171</height>
@@ -503,7 +503,7 @@ font-family:calibri;
 background-color: rgb(0, 74, 108);</string>
      </property>
      <property name="text">
-      <string>Par Decroissant</string>
+      <string>PrixDecroissant</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_22">
@@ -530,7 +530,7 @@ font-family:calibri;
 background-color: rgb(0, 74, 108);</string>
      </property>
      <property name="text">
-      <string>Par Croissant</string>
+      <string>PrixCroissant</string>
      </property>
     </widget>
     <widget class="QPushButton" name="pushButton_23">
@@ -557,16 +557,16 @@ font-family:calibri;
 background-color: rgb(0, 74, 108);</string>
      </property>
      <property name="text">
-      <string>Par Libellé</string>
+      <string> Libellé</string>
      </property>
     </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_12">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>440</y>
-      <width>471</width>
+      <x>10</x>
+      <y>450</y>
+      <width>351</width>
       <height>171</height>
      </rect>
     </property>
@@ -582,7 +582,7 @@ background-color: rgb(0, 74, 108);</string>
       <rect>
        <x>10</x>
        <y>80</y>
-       <width>111</width>
+       <width>121</width>
        <height>31</height>
       </rect>
      </property>
@@ -609,7 +609,7 @@ background-color: rgb(0, 74, 108);</string>
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>111</width>
+       <width>121</width>
        <height>31</height>
       </rect>
      </property>
@@ -636,7 +636,7 @@ background-color: rgb(0, 74, 108);</string>
       <rect>
        <x>10</x>
        <y>130</y>
-       <width>111</width>
+       <width>121</width>
        <height>31</height>
       </rect>
      </property>
@@ -704,9 +704,9 @@ border-radius: 10px;</string>
    <widget class="QGroupBox" name="groupBox_7">
     <property name="geometry">
      <rect>
-      <x>920</x>
-      <y>450</y>
-      <width>241</width>
+      <x>670</x>
+      <y>460</y>
+      <width>201</width>
       <height>171</height>
      </rect>
     </property>
@@ -720,9 +720,9 @@ border-radius: 10px;</string>
     <widget class="QPushButton" name="pushButton_11">
      <property name="geometry">
       <rect>
-       <x>0</x>
-       <y>100</y>
-       <width>241</width>
+       <x>30</x>
+       <y>90</y>
+       <width>161</width>
        <height>61</height>
       </rect>
      </property>
@@ -747,9 +747,9 @@ background-color: rgb(0, 74, 108);</string>
     <widget class="QPushButton" name="pushButton_12">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>20</x>
        <y>10</y>
-       <width>241</width>
+       <width>171</width>
        <height>61</height>
       </rect>
      </property>
@@ -775,8 +775,8 @@ background-color: rgb(0, 74, 108);</string>
    <widget class="QLabel" name="label_8">
     <property name="geometry">
      <rect>
-      <x>1190</x>
-      <y>0</y>
+      <x>1380</x>
+      <y>-10</y>
       <width>121</width>
       <height>101</height>
      </rect>
@@ -788,13 +788,33 @@ background-color: rgb(0, 74, 108);</string>
      <pixmap resource="recource.qrc">:/Artboard-35-ConvertImage.png</pixmap>
     </property>
    </widget>
+   <widget class="QTextEdit" name="textEdit">
+    <property name="geometry">
+     <rect>
+      <x>1060</x>
+      <y>30</y>
+      <width>321</width>
+      <height>371</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="textBrowser">
+    <property name="geometry">
+     <rect>
+      <x>1060</x>
+      <y>410</y>
+      <width>401</width>
+      <height>221</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1282</width>
+     <width>1471</width>
      <height>26</height>
     </rect>
    </property>
