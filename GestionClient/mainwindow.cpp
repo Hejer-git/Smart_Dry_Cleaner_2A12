@@ -5,6 +5,9 @@
 #include <QIntValidator>
 #include <QPrinter>
 #include <QPrintDialog>
+#include <QSystemTrayIcon>
+#include <QComboBox>
+#include <smtp.h>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -183,3 +186,22 @@ void MainWindow::on_pushButton_extr_clicked()
                   if(dialog.exec()==QDialog::Rejected) return ;
                   ui->textEdit->print(&printer);
 }
+
+void MainWindow::mail_envoye()
+{
+    QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
+    notifyIcon->show();
+    notifyIcon->showMessage("","Votre Mail est envoyé :)",QSystemTrayIcon::Information,15000);
+}
+
+
+void MainWindow::on_pushButton_mail_clicked()
+{
+    Smtp* smtp = new Smtp("hejerbenyacoub0@gmail.com","hejerbenyacoub","smtp.gmail.com",465);
+     connect(smtp, SIGNAL(status(QString)), this, SLOT(mail_envoye()));
+
+    smtp->sendMail("hejerbenyacoub0@gmail.com","amirasoua9@gmail.com",ui->subject->text(),ui->msg->toPlainText());
+}
+
+
+

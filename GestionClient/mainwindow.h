@@ -1,6 +1,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 #include <client.h>
+#include <smtp.h>
 #include <QMainWindow>
 
 
@@ -43,6 +44,9 @@ private slots:
     void on_Button_triPt_clicked();
 
     void on_pushButton_extr_clicked();
+
+    void on_pushButton_mail_clicked();
+    void mail_envoye();
 
 private:
     Ui::MainWindow *ui;

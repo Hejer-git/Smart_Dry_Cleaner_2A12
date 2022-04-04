@@ -13,12 +13,14 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTableView>
@@ -34,7 +36,12 @@ public:
     QGroupBox *groupBox_4;
     QPushButton *pushButton_extr;
     QGroupBox *groupBox_8;
-    QPushButton *pushButton_12;
+    QPushButton *pushButton_mail;
+    QComboBox *rcpt;
+    QLineEdit *subject;
+    QPlainTextEdit *msg;
+    QLabel *label_11;
+    QLabel *label_12;
     QGroupBox *groupBox_11;
     QPushButton *Button_triId;
     QPushButton *Button_triN;
@@ -82,7 +89,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1427, 748);
+        MainWindow->resize(1631, 986);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName(QStringLiteral("centralwidget"));
         groupBox_4 = new QGroupBox(centralwidget);
@@ -108,13 +115,13 @@ public:
         pushButton_extr->setAutoDefault(true);
         groupBox_8 = new QGroupBox(centralwidget);
         groupBox_8->setObjectName(QStringLiteral("groupBox_8"));
-        groupBox_8->setGeometry(QRect(940, 520, 281, 101));
+        groupBox_8->setGeometry(QRect(920, 520, 581, 411));
         groupBox_8->setStyleSheet(QLatin1String("color: #00002d;\n"
 "  font-size: 16px;"));
-        pushButton_12 = new QPushButton(groupBox_8);
-        pushButton_12->setObjectName(QStringLiteral("pushButton_12"));
-        pushButton_12->setGeometry(QRect(10, 30, 261, 61));
-        pushButton_12->setStyleSheet(QLatin1String("  border: 2px solid black;\n"
+        pushButton_mail = new QPushButton(groupBox_8);
+        pushButton_mail->setObjectName(QStringLiteral("pushButton_mail"));
+        pushButton_mail->setGeometry(QRect(380, 330, 141, 61));
+        pushButton_mail->setStyleSheet(QLatin1String("  border: 2px solid black;\n"
 "border-radius: 10px;\n"
 "  color: white;\n"
 "  padding: 20px;\n"
@@ -126,7 +133,36 @@ public:
 " \n"
 "  border-radius : 16px;\n"
 "background-color: rgb(0, 74, 108);"));
-        pushButton_12->setAutoDefault(false);
+        pushButton_mail->setAutoDefault(false);
+        rcpt = new QComboBox(groupBox_8);
+        rcpt->setObjectName(QStringLiteral("rcpt"));
+        rcpt->setGeometry(QRect(150, 40, 361, 31));
+        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(rcpt->sizePolicy().hasHeightForWidth());
+        rcpt->setSizePolicy(sizePolicy);
+        rcpt->setMouseTracking(false);
+        rcpt->setFocusPolicy(Qt::StrongFocus);
+        rcpt->setStyleSheet(QLatin1String("border: 2px solid black;\n"
+"border-radius: 10px;"));
+        subject = new QLineEdit(groupBox_8);
+        subject->setObjectName(QStringLiteral("subject"));
+        subject->setGeometry(QRect(150, 80, 361, 31));
+        subject->setStyleSheet(QLatin1String("border: 2px solid black;\n"
+"border-radius: 10px;"));
+        msg = new QPlainTextEdit(groupBox_8);
+        msg->setObjectName(QStringLiteral("msg"));
+        msg->setGeometry(QRect(150, 130, 371, 181));
+        msg->setStyleSheet(QLatin1String("border: 2px solid black;\n"
+"border-radius: 10px;\n"
+""));
+        label_11 = new QLabel(groupBox_8);
+        label_11->setObjectName(QStringLiteral("label_11"));
+        label_11->setGeometry(QRect(30, 80, 111, 31));
+        label_12 = new QLabel(groupBox_8);
+        label_12->setObjectName(QStringLiteral("label_12"));
+        label_12->setGeometry(QRect(40, 40, 111, 31));
         groupBox_11 = new QGroupBox(centralwidget);
         groupBox_11->setObjectName(QStringLiteral("groupBox_11"));
         groupBox_11->setGeometry(QRect(590, 450, 311, 241));
@@ -378,7 +414,7 @@ public:
 "border-radius: 10px;"));
         label = new QLabel(centralwidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(-120, -70, 1621, 801));
+        label->setGeometry(QRect(-120, -70, 1621, 1001));
         label->setPixmap(QPixmap(QString::fromUtf8(":/15190.jpg")));
         groupBox_3 = new QGroupBox(centralwidget);
         groupBox_3->setObjectName(QStringLiteral("groupBox_3"));
@@ -428,6 +464,8 @@ public:
         textEdit = new QTextEdit(centralwidget);
         textEdit->setObjectName(QStringLiteral("textEdit"));
         textEdit->setGeometry(QRect(990, 40, 431, 271));
+        textEdit->setStyleSheet(QLatin1String("border: 2px solid black;\n"
+"border-radius: 10px;"));
         MainWindow->setCentralWidget(centralwidget);
         label->raise();
         groupBox_4->raise();
@@ -442,7 +480,7 @@ public:
         textEdit->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName(QStringLiteral("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1427, 26));
+        menubar->setGeometry(QRect(0, 0, 1631, 26));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName(QStringLiteral("statusbar"));
@@ -459,7 +497,9 @@ public:
         groupBox_4->setTitle(QApplication::translate("MainWindow", "Extaire PDF", Q_NULLPTR));
         pushButton_extr->setText(QApplication::translate("MainWindow", "Extraire", Q_NULLPTR));
         groupBox_8->setTitle(QApplication::translate("MainWindow", "Envoyer un mail de confirmation", Q_NULLPTR));
-        pushButton_12->setText(QApplication::translate("MainWindow", "Envoyer un mail de confirmation", Q_NULLPTR));
+        pushButton_mail->setText(QApplication::translate("MainWindow", "Envoyer", Q_NULLPTR));
+        label_11->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">Objet</span></p></body></html>", Q_NULLPTR));
+        label_12->setText(QApplication::translate("MainWindow", "<html><head/><body><p><span style=\" font-size:14pt;\">\303\200</span></p></body></html>", Q_NULLPTR));
         groupBox_11->setTitle(QApplication::translate("MainWindow", "Trier les clients", Q_NULLPTR));
         Button_triId->setText(QApplication::translate("MainWindow", "Par identifiant", Q_NULLPTR));
         Button_triN->setText(QApplication::translate("MainWindow", "Par nom", Q_NULLPTR));

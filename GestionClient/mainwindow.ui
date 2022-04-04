@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1427</width>
-    <height>748</height>
+    <width>1631</width>
+    <height>986</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -64,10 +64,10 @@ background-color: rgb(0, 74, 108);</string>
    <widget class="QGroupBox" name="groupBox_8">
     <property name="geometry">
      <rect>
-      <x>940</x>
+      <x>920</x>
       <y>520</y>
-      <width>281</width>
-      <height>101</height>
+      <width>581</width>
+      <height>411</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -77,12 +77,12 @@ background-color: rgb(0, 74, 108);</string>
     <property name="title">
      <string>Envoyer un mail de confirmation</string>
     </property>
-    <widget class="QPushButton" name="pushButton_12">
+    <widget class="QPushButton" name="pushButton_mail">
      <property name="geometry">
       <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>261</width>
+       <x>380</x>
+       <y>330</y>
+       <width>141</width>
        <height>61</height>
       </rect>
      </property>
@@ -101,10 +101,91 @@ font-family:calibri;
 background-color: rgb(0, 74, 108);</string>
      </property>
      <property name="text">
-      <string>Envoyer un mail de confirmation</string>
+      <string>Envoyer</string>
      </property>
      <property name="autoDefault">
       <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="rcpt">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>40</y>
+       <width>361</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::StrongFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid black;
+border-radius: 10px;</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="subject">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>80</y>
+       <width>361</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid black;
+border-radius: 10px;</string>
+     </property>
+    </widget>
+    <widget class="QPlainTextEdit" name="msg">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>130</y>
+       <width>371</width>
+       <height>181</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid black;
+border-radius: 10px;
+</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>80</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Objet&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_12">
+     <property name="geometry">
+      <rect>
+       <x>40</x>
+       <y>40</y>
+       <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;À&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </widget>
@@ -730,7 +811,7 @@ border-radius: 10px;</string>
       <x>-120</x>
       <y>-70</y>
       <width>1621</width>
-      <height>801</height>
+      <height>1001</height>
      </rect>
     </property>
     <property name="text">
@@ -853,6 +934,10 @@ border-radius: 10px;</string>
       <height>271</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">border: 2px solid black;
+border-radius: 10px;</string>
+    </property>
    </widget>
    <zorder>label</zorder>
    <zorder>groupBox_4</zorder>
@@ -871,7 +956,7 @@ border-radius: 10px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1427</width>
+     <width>1631</width>
      <height>26</height>
     </rect>
    </property>

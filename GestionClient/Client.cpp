@@ -2,6 +2,14 @@
 #include <QSqlQuery>
 #include <QtDebug>
 #include <QObject>
+#include <QMessageBox>
+#include<QMessageBox>
+#include <QDesktopServices>
+#include <QPainter>
+#include<QUrl>
+#include <QPrintDialog>
+#include <QPrinter>
+#include <QPdfWriter>
 
 Client::Client()
 {
@@ -153,6 +161,54 @@ QSqlQueryModel * Client::trierPtf()
 
 QString Client::  apercu_pdf()
 {
+    /*QPdfWriter pdf("C:/Users/21654/Desktop/SmartDryCleaner/GestionClient/client.pdf");
+        QPainter painter(&pdf);
+        int i = 4000;
+        painter.setPen(Qt::blue);
+        painter.setFont(QFont("Arial", 30));
+        painter.drawText(2300,1200,"Liste Des Clients");
+        painter.setPen(Qt::black);
+        painter.setFont(QFont("Arial", 50));
+        // painter.drawText(1100,2000,afficheDC);
+        painter.drawRect(1500,200,7300,2600);
+        //painter.drawPixmap(QRect(7600,70,2000,2600),QPixmap("C:/Users/RH/Desktop/projecpp/image/logopdf.png"));
+        painter.drawRect(0,3000,9600,500);
+        painter.setFont(QFont("Arial", 9));
+        painter.drawText(300,3300,"id_c");
+        painter.drawText(1633,3300,"nom");
+        painter.drawText(2966,3300,"prenom");
+        painter.drawText(4299,3300,"adresse");
+        painter.drawText(5632,3300,"email");
+        painter.drawText(6965,3300,"num_tel");
+
+
+        QSqlQuery query;
+        query.prepare("select * from CLIENT");
+        query.exec();
+        while (query.next())
+        {
+            painter.drawText(300,i,query.value(0).toString());
+            painter.drawText(1633,i,query.value(1).toString());
+            painter.drawText(2966,i,query.value(2).toString());
+            painter.drawText(4299,i,query.value(3).toString());
+            painter.drawText(5632,i,query.value(4).toString());
+            painter.drawText(6965,i,query.value(5).toString());
+
+
+
+            i = i +500;
+        }
+        int reponse = QMessageBox::question(this, "Generer PDF", "<PDF Enregistre>...Vous Voulez Affichez Le PDF ?", QMessageBox::Yes |  QMessageBox::No);
+        if (reponse == QMessageBox::Yes)
+        {
+            QDesktopServices::openUrl(QUrl::fromLocalFile("C:/Users/21654/Desktop/SmartDryCleaner/GestionClient/client.pdf"));
+
+            painter.end();
+        }
+        if (reponse == QMessageBox::No)
+        {
+            painter.end();
+        }*/
 
     QString text="            ******* Les CLIENTS ********       \n \n " ;
     QSqlQuery query ;
