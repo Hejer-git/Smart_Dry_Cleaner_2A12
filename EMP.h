@@ -1,6 +1,8 @@
 #ifndef EMP_H
 #define EMP_H
 #include"employe.h"
+#include "excel.h"
+#include"qr.h"
 #include <QDialog>
 
 QT_BEGIN_NAMESPACE
@@ -38,6 +40,12 @@ private slots:
     void on_pushButtonTsalaire_clicked();
 
     void on_pushButtonTnbh_clicked();
+
+    void on_pushButtonextraire_clicked();
+
+    void on_pushButtonCprime_clicked();
+
+    void on_pushButtonqr_clicked();
 
 private:
     Ui::EMP *ui;

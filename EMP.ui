@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1336</width>
-    <height>675</height>
+    <height>772</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -449,7 +449,7 @@ background-color: rgb(0, 74, 108);</string>
   <widget class="QGroupBox" name="groupBox_13">
    <property name="geometry">
     <rect>
-     <x>100</x>
+     <x>20</x>
      <y>470</y>
      <width>361</width>
      <height>181</height>
@@ -589,7 +589,7 @@ border-radius: 10px;</string>
   <widget class="QGroupBox" name="groupBox_11">
    <property name="geometry">
     <rect>
-     <x>550</x>
+     <x>410</x>
      <y>470</y>
      <width>241</width>
      <height>181</height>
@@ -687,7 +687,7 @@ background-color: rgb(0, 74, 108);</string>
   <widget class="QGroupBox" name="groupBox_7">
    <property name="geometry">
     <rect>
-     <x>910</x>
+     <x>670</x>
      <y>470</y>
      <width>241</width>
      <height>171</height>
@@ -700,7 +700,7 @@ background-color: rgb(0, 74, 108);</string>
    <property name="title">
     <string>Calculer Prime de Rendement</string>
    </property>
-   <widget class="QPushButton" name="pushButtonAff3">
+   <widget class="QPushButton" name="pushButtonqr">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -724,7 +724,7 @@ font-family:calibri;
 background-color: rgb(0, 74, 108);</string>
     </property>
     <property name="text">
-     <string>Aff les 3 meilleurs employés</string>
+     <string>Générer Code QR</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButtonCprime">
@@ -754,6 +754,19 @@ background-color: rgb(0, 74, 108);</string>
      <string>Caluler Prime</string>
     </property>
    </widget>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>920</x>
+     <y>460</y>
+     <width>361</width>
+     <height>261</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
   </widget>
  </widget>
  <resources/>

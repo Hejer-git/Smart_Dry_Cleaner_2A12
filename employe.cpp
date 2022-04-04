@@ -1,4 +1,5 @@
 #include "employe.h"
+#include"qr.h"
 #include "Connection.h"
 #include <QSqlQuery>
 #include <QtDebug>
@@ -130,4 +131,19 @@ model->setHeaderData(5, Qt::Horizontal, QObject::tr("NUM_TELE"));
 model->setHeaderData(6, Qt::Horizontal, QObject::tr("SALAIRE"));
 model->setHeaderData(7, Qt::Horizontal, QObject::tr("NBR_HEURES"));
     return model;
+}
+ int Employe::calcul()
+{
+    QSqlQuery query;
+
+    query.prepare("select * from EMPLOYE SALAIRE where (NBR_HEURES >100) ");
+
+
+    query.exec();
+    int Salaire;
+
+    while(query.next())
+    {Salaire++;
+    }
+    return Salaire;
 }

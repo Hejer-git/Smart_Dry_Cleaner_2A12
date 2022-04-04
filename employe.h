@@ -44,7 +44,8 @@ private:
     QSqlQueryModel *rechercher3(QString);
     QSqlQueryModel * trier1();//par ordre alphabétique
     QSqlQueryModel * trier2();//men asgher lel akber
-     QSqlQueryModel * trier3();//men asgher lel akber
+    QSqlQueryModel * trier3();//men asgher lel akber
+    int  calcul();
 };
 
 #endif // EMPLOYE_H

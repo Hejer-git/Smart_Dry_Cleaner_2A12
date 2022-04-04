@@ -19,14 +19,18 @@ SOURCES += \
     Connection.cpp \
     EMP.cpp \
     employe.cpp \
+    excel.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    qr.cpp
 
 HEADERS += \
     Connection.h \
     EMP.h \
     employe.h \
-    mainwindow.h
+    excel.h \
+    mainwindow.h \
+    qr.h
 
 FORMS += \
     EMP.ui \
