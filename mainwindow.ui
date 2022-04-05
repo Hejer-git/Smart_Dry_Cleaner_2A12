@@ -14,22 +14,6 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1481</width>
-      <height>641</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="recource.qrc">:/15190.jpg</pixmap>
-    </property>
-   </widget>
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
@@ -785,7 +769,7 @@ background-color: rgb(0, 74, 108);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="recource.qrc">:/Artboard-35-ConvertImage.png</pixmap>
+     <pixmap resource="../../Documents/gestion_m/resources.qrc">:/Artboard-35-ConvertImage.png</pixmap>
     </property>
    </widget>
    <widget class="QTextEdit" name="textEdit">
@@ -821,8 +805,6 @@ background-color: rgb(0, 74, 108);</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="recource.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

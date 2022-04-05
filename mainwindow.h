@@ -11,38 +11,38 @@ QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT   
+    Q_OBJECT
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private slots:
 
-    void on_pushButton_VAL_AJ_clicked();
+    void on_pushButton_VAL_AJ_16_clicked();
 
-    void on_pushButton_2_clicked();
+    void on_pushButton_157_clicked();
 
-   void on_pushButton_3_clicked();
+   void on_pushButton_158_clicked();
 
-   void on_tableView_activated(const QModelIndex &index);
+   void on_tableView_15_activated(const QModelIndex &index);
 
-   void on_tableView_clicked(const QModelIndex &index);
+   void on_tableView_15_clicked(const QModelIndex &index);
 
-   void on_pushButton_22_clicked();
+   void on_pushButton_163_clicked();
 
-  void on_pushButton_21_clicked();
+  void on_pushButton_161_clicked();
 
-   void on_pushButton_23_clicked();
+   void on_pushButton_164_clicked();
 
-   void on_pushButton_25_clicked();
+   void on_pushButton_160_clicked();
 
-   void on_pushButton_24_clicked();
+   void on_pushButton_159_clicked();
 
-   void on_pushButton_26_clicked();
+   void on_pushButton_162_clicked();
 
-   void on_pushButton_5_clicked();
+   void on_pushButton_156_clicked();
 
-   void on_pushButton_12_clicked();
+   void on_pushButton_166_clicked();
 
 private:
     Ui::MainWindow *ui;

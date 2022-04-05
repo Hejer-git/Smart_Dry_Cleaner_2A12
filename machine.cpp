@@ -4,6 +4,9 @@
 #include <QObject>
 
 
+#include <QSystemTrayIcon>
+
+
 machine::machine()
 {
     id_machine=0;
@@ -176,4 +179,44 @@ QString machine::  apercu_pdf()
     }
 
             return text ;
+}
+
+
+void machine::notification(QString cls)
+{
+    QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
+    notifyIcon->show();
+    notifyIcon->showMessage("NOTIFICATION",cls,QSystemTrayIcon::Information,15000);
+
+}
+void machine::Signal()
+{
+    QSqlQuery query ;
+    query.prepare("SELECT * from MACHINE where etat_M = 0 ")  ;
+
+    if(query.exec())
+            {
+                int count=0;
+                while(query.next())
+                {
+                    count++;
+                }
+                if(count==1)
+                   {
+                    notification("une machine en panne");
+
+                    }
+                if(count<1)
+
+                    {
+                    notification("aucune machine en panne");
+
+                    }
+               if (count>1)
+                   {
+                     notification("plusieurs machine en panne");
+
+                   }
+    }
+
 }

@@ -47,6 +47,8 @@ public:
     QSqlQueryModel * recherche2(QString);
     QSqlQueryModel * recherche3(QString);
     QString  apercu_pdf();
+    void notification(QString);
+    void Signal();
 
  historique h;
 

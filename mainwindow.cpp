@@ -7,7 +7,11 @@
 #include <QPrintDialog>
 #include"historique.h"
 #include <QTextDocument>
-#include"alert.h"
+#include <QSqlError>
+#include<QSystemTrayIcon>
+#include <QRegExp>
+#include <QDesktopServices>
+#include <QUrl>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -15,22 +19,22 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    ui->tableView->setModel(m.afficher());
+    ui->tableView_15->setModel(m.afficher());
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
 }
-void MainWindow::on_pushButton_VAL_AJ_clicked()
+void MainWindow::on_pushButton_VAL_AJ_16_clicked()
 {
-    int id_machine = ui->lineEdit->text().toInt();
-    QString libelle_M = ui->lineEdit_2->text();
-    QString fourisseur_M = ui->lineEdit_3->text();
-    int etat_M = ui->lineEdit_4->text().toInt();
-    int prix_M = ui->lineEdit_9->text().toInt();
-    int qte_M = ui->lineEdit_5->text().toInt();
-    int id_emp = ui->lineEdit_12->text().toInt();
+    int id_machine = ui->lineEdit_a->text().toInt();
+    QString libelle_M = ui->lineEdit_b->text();
+    QString fourisseur_M = ui->lineEdit_c->text();
+    int etat_M = ui->lineEdit_d->text().toInt();
+    int prix_M = ui->lineEdit_e->text().toInt();
+    int qte_M = ui->lineEdit_f->text().toInt();
+    int id_emp = ui->lineEdit_g->text().toInt();
       int idR;
     QString textajouter;//historique
     historique h;
@@ -41,7 +45,8 @@ void MainWindow::on_pushButton_VAL_AJ_clicked()
     {
 
         //actualisation
-        ui->tableView->setModel(m.afficher());
+        ui->tableView_15->setModel(m.afficher());
+         m.Signal();
 
         QMessageBox::information(nullptr,QObject::tr("OK"),QObject::tr("Ajout effectue\n" "Click Cancel to exit."),QMessageBox::Cancel);
 
@@ -67,14 +72,15 @@ void MainWindow::on_pushButton_VAL_AJ_clicked()
 }
 
 
-void MainWindow::on_pushButton_2_clicked()
+void MainWindow::on_pushButton_157_clicked()
 {
-    int id_machine=ui->lineEdit_11->text().toInt();
+    int id_machine=ui->lineEdit_k->text().toInt();
     bool test=m.supprimer(id_machine);
     if(test)
          {
              //actualisation
-             ui->tableView->setModel(m.afficher());
+             ui->tableView_15->setModel(m.afficher());
+
 
              QMessageBox::information(nullptr, QObject::tr("OK"), QObject::tr("Suppression effectuée\n"
                          "Click Cancel to exit."), QMessageBox::Cancel);
@@ -101,21 +107,22 @@ void MainWindow::on_pushButton_2_clicked()
 
 
 }
-void MainWindow::on_pushButton_3_clicked()
+void MainWindow::on_pushButton_158_clicked()
 {
-    int id_machine = ui->lineEdit->text().toInt(); //not sure
-    QString libelle_M = ui->lineEdit_2->text();
-    QString fourisseur_M = ui->lineEdit_3->text();
-    int etat_M = ui->lineEdit_4->text().toInt();
-    int prix_M = ui->lineEdit_9->text().toInt();
-    int qte_M = ui->lineEdit_5->text().toInt();
-    int id_emp = ui->lineEdit_12->text().toInt();
+    int id_machine = ui->lineEdit_a->text().toInt(); //not sure
+    QString libelle_M = ui->lineEdit_b->text();
+    QString fourisseur_M = ui->lineEdit_c->text();
+    int etat_M = ui->lineEdit_d->text().toInt();
+    int prix_M = ui->lineEdit_e->text().toInt();
+    int qte_M = ui->lineEdit_f->text().toInt();
+    int id_emp = ui->lineEdit_g->text().toInt();
     machine M(id_machine,libelle_M,fourisseur_M,etat_M,qte_M,prix_M,id_emp);
     bool test=M.modifiermachine();
     if(test)
     {
         //actualisation
-        ui->tableView->setModel(m.afficher());
+        ui->tableView_15->setModel(m.afficher());
+         m.Signal();
 
         QMessageBox::information(nullptr,QObject::tr("OK"),QObject::tr("modif effectué\n" "Click Cancel to exit."),QMessageBox::Cancel);
 
@@ -144,74 +151,74 @@ void MainWindow::on_pushButton_3_clicked()
 
 
 
-void MainWindow::on_tableView_clicked(const QModelIndex &index)
+void MainWindow::on_tableView_15_clicked(const QModelIndex &index)
 {
-    QString val=ui->tableView->model()->data(index).toString();
+    QString val=ui->tableView_15->model()->data(index).toString();
           QSqlQuery qry;
           qry.prepare("select * from MACHINE where"
                       " id_machine='"+val+"' or libelle_M='"+val+"' or fournisseur_M='"+val+"' or etat_M='"+val+"' or prix_M='"+val+"' or qte_M='"+val+"' or id_emp='"+val+"' ");
           if(qry.exec())
        {while (qry.next())
-           { ui->lineEdit->setText(qry.value(0).toString());
-             ui->lineEdit_2 ->setText(qry.value(1).toString());
-             ui->lineEdit_3->setText(qry.value(2).toString());
-             ui->lineEdit_4->setText(qry.value(3).toString());
-             ui->lineEdit_5->setText(qry.value(4).toString());
-             ui->lineEdit_9->setText(qry.value(5).toString());
-             ui->lineEdit_12->setText(qry.value(6).toString());
+           { ui->lineEdit_a->setText(qry.value(0).toString());
+             ui->lineEdit_b ->setText(qry.value(1).toString());
+             ui->lineEdit_c->setText(qry.value(2).toString());
+             ui->lineEdit_d->setText(qry.value(3).toString());
+             ui->lineEdit_e->setText(qry.value(4).toString());
+             ui->lineEdit_f->setText(qry.value(5).toString());
+             ui->lineEdit_g->setText(qry.value(6).toString());
             }
         }
 }
 
-void MainWindow::on_tableView_activated(const QModelIndex &index)
+void MainWindow::on_tableView_15_activated(const QModelIndex &index)
 {
-    id_machine=ui->tableView->model()->data(index).toInt();
+    id_machine=ui->tableView_15->model()->data(index).toInt();
     QSqlQuery qry;
 
 }
 
-void MainWindow::on_pushButton_22_clicked()
+void MainWindow::on_pushButton_163_clicked()
 {
 
-ui->tableView->setModel(m.tri_prixASC());
+ui->tableView_15->setModel(m.tri_prixASC());
 
 
 }
 
-void MainWindow::on_pushButton_21_clicked()
+void MainWindow::on_pushButton_162_clicked()
 {
-    ui->tableView->setModel(m.tri_prixDEC());
+    ui->tableView_15->setModel(m.tri_prixDEC());
 }
 
-void MainWindow::on_pushButton_23_clicked()
+void MainWindow::on_pushButton_164_clicked()
 {
-    ui->tableView->setModel(m.tri_libelle());
+    ui->tableView_15->setModel(m.tri_libelle());
 }
 
 
 
-void MainWindow::on_pushButton_25_clicked()
+void MainWindow::on_pushButton_160_clicked()
 {
 
-    QString prix_M = ui->lineEdit_6->text();
-    ui->tableView->setModel(m.recherche1(prix_M));
+    QString prix_M = ui->lineEdit_h->text();
+    ui->tableView_15->setModel(m.recherche1(prix_M));
 }
 
-void MainWindow::on_pushButton_24_clicked()
+void MainWindow::on_pushButton_159_clicked()
 {
 
-    QString libelle_M = ui->lineEdit_7->text();
-    ui->tableView->setModel(m.recherche2(libelle_M));
+    QString libelle_M = ui->lineEdit_i->text();
+    ui->tableView_15->setModel(m.recherche2(libelle_M));
 }
 
-void MainWindow::on_pushButton_26_clicked()
+void MainWindow::on_pushButton_161_clicked()
 {
 
-    QString etat_M = ui->lineEdit_10->text();
-    ui->tableView->setModel(m.recherche3(etat_M));
+    QString etat_M = ui->lineEdit_j->text();
+    ui->tableView_15->setModel(m.recherche3(etat_M));
 }
 
-void MainWindow::on_pushButton_5_clicked()
+void MainWindow::on_pushButton_156_clicked()
 {
     machine m;
               QString text=m.apercu_pdf();
@@ -224,9 +231,11 @@ void MainWindow::on_pushButton_5_clicked()
              ui->textEdit->print(&printer);
 }
 
-void MainWindow::on_pushButton_12_clicked()
+void MainWindow::on_pushButton_166_clicked()
 {
     historique h;
     ui->textBrowser->show();
     ui->textBrowser->setPlainText(h.read());
 }
+
+

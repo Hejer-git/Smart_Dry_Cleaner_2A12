@@ -16,11 +16,10 @@ public:
     historique();
     void write(QString);
     QString read();
-   /* void write1(QString);
-    QString read1();*/
+
 private:
     QString mFilename;
- // QString mFilename1;
+
 };
 
 #endif // HISTORIQUE_H
