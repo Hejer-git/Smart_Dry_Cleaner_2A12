@@ -19,22 +19,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    arduino.cpp \
     connection.cpp \
     historique.cpp \
     historique.cpp \
     machine.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    smartinterface.cpp
 
 HEADERS += \
+    arduino.h \
     connection.h \
     historique.h \
     historique.h \
     machine.h \
-    mainwindow.h
+    mainwindow.h \
+    smartinterface.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    smartinterface.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

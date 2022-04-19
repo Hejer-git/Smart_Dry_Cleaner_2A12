@@ -3,13 +3,18 @@
 #include <QMessageBox>
 #include "connection.h"
 #include "machine.h"
+#include "smartinterface.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Connection c;
+    smartinterface s;
     bool test=c.createconnection();
     MainWindow w;
+    s.show();
+    return a.exec();
+
     if(test)
     {w.show();
         QMessageBox::critical(nullptr, QObject::tr("database is open"),
