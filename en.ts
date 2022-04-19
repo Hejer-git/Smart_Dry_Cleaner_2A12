@@ -220,7 +220,7 @@ Click Cancel to exit.</source>
         <location filename="mainwindow.cpp" line="66"/>
         <source>suppression effectué 
  Click Cancel to exit.</source>
-        <translation type="unfinished">delete effected 
+        <translation>delete effected 
  Click Cancel to exit.</translation>
     </message>
     <message>
@@ -239,14 +239,14 @@ Click Cancel to exit.</source>
         <location filename="mainwindow.cpp" line="96"/>
         <source>modification effectué 
  Click Cancel to exit.</source>
-        <translation type="unfinished">modification effected 
+        <translation>modification effected 
  Click Cancel to exit.</translation>
     </message>
     <message>
         <location filename="mainwindow.cpp" line="101"/>
         <source>modification non effectué. 
  Click Cancel to exit.</source>
-        <translation type="unfinished">modification non effected. 
+        <translation>modification non effected. 
  Click Cancel to exit</translation>
     </message>
     <message>
@@ -255,7 +255,7 @@ Click Cancel to exit.</source>
         <location filename="produit.cpp" line="128"/>
         <location filename="produit.cpp" line="141"/>
         <source>IDproduit</source>
-        <translation type="unfinished">IDproduct</translation>
+        <translation>IDproduct</translation>
     </message>
     <message>
         <location filename="produit.cpp" line="61"/>
@@ -263,7 +263,7 @@ Click Cancel to exit.</source>
         <location filename="produit.cpp" line="129"/>
         <location filename="produit.cpp" line="142"/>
         <source>Prix</source>
-        <translation type="unfinished">Price</translation>
+        <translation>Price</translation>
     </message>
     <message>
         <location filename="produit.cpp" line="62"/>
@@ -271,7 +271,7 @@ Click Cancel to exit.</source>
         <location filename="produit.cpp" line="130"/>
         <location filename="produit.cpp" line="143"/>
         <source>Libelle</source>
-        <translation type="unfinished">Wording</translation>
+        <translation>Wording</translation>
     </message>
     <message>
         <location filename="produit.cpp" line="63"/>
@@ -287,7 +287,7 @@ Click Cancel to exit.</source>
         <location filename="produit.cpp" line="132"/>
         <location filename="produit.cpp" line="145"/>
         <source>Fournisseurp</source>
-        <translation type="unfinished">Providerp</translation>
+        <translation>Providerp</translation>
     </message>
 </context>
 </TS>

@@ -1,4 +1,7 @@
 QT       += core gui sql
+QT += core gui multimedia
+
+QT += core gui serialport
 TRANSLATIONS += fr.ts en.ts
 QT       += core gui charts
 QT += printsupport
@@ -21,6 +24,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    arduino.cpp \
     main.cpp \
     mainwindow.cpp\
     connection.cpp \
@@ -28,6 +32,7 @@ SOURCES += \
     produit.cpp
 
 HEADERS += \
+    arduino.h \
     mainwindow.h\
     connection.h \
     produit.h

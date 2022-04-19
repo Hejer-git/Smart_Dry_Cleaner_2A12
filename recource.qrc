@@ -2,5 +2,9 @@
     <qresource prefix="/">
         <file>15190.jpg</file>
         <file>Artboard-35-ConvertImage.png</file>
+        <file>alert.mp3</file>
+        <file>Breaking News.mp3</file>
+        <file>ringing.mp3</file>
+        <file>son.wav</file>
     </qresource>
 </RCC>

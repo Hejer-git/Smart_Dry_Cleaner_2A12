@@ -6,6 +6,9 @@
 #include "produit.h"
 #include <QTextDocument>
 #include <QtCharts>
+#include "dialog.h"
+#include <QObject>
+
 
 
 QT_BEGIN_NAMESPACE
@@ -15,6 +18,9 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+    bool checkUIDInBase(int);
+    QString getIdAndNameEmp(int uid);
+
 
 public:
 
@@ -24,7 +30,7 @@ public:
 private slots:
     void on_pushButton_VAL_AJ_2_clicked();
 
-    
+
     void on_tableView_activated(const QModelIndex &index);
 
     void on_tableView_clicked(const QModelIndex &index);
@@ -49,6 +55,8 @@ private slots:
     void on_pushButton_7_clicked();
 
 
+
+
     void on_tabWidget_tabBarClicked(int index);
     int G_PVS1();
     int G_PVS2();
@@ -60,12 +68,35 @@ private slots:
     QChartView* piechart();
     void on_tabWidget_2_tabBarClicked(int index);
 
-    void on_tableWidget_cellClicked(int row, int column);
+    void on_tableWidget_cellClicked(int, int );
 
+    void on_pushButton_clicked();
+
+    void on_pushButton_open_clicked();
+
+    void on_pushButton_close_clicked();
+
+    void on_pushButton_start_clicked();
+
+    void on_pushButton_pause_clicked();
+
+    void on_pushButton_10_clicked();
+
+    void on_pushButton_11_clicked();
+
+void update_label();
 private:
     Ui::MainWindow *ui;
     produit Pr ;
     int idp= 0;
+    dialog *mDialog;
+    QMediaPlayer*	playermusic;
+    QMediaPlayer*	playermusic1;
+    QMediaPlayer*	player;
+
+    QByteArray data; // variable contenant les données reçues
+
+    Arduino A;
 
 };
 #endif // MAINWINDOW_H

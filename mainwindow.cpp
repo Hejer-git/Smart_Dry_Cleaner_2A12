@@ -7,6 +7,9 @@
 #include <QPrinter>
 #include <QPrintDialog>
 #include <QtCharts>
+#include "dialog.h"
+#include <QFileDialog>
+#include <QDialog>
 
 
 
@@ -15,6 +18,23 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    int ret=A.connect_arduino(); // lancer la connexion à arduino
+    switch(ret){
+    case(0):qDebug()<< "arduino is available and connected to : "<< A.getarduino_port_name();
+        break;
+    case(1):qDebug() << "arduino is available but not connected to :" <<A.getarduino_port_name();
+       break;
+    case(-1):qDebug() << "arduino is not available";
+    }
+     QObject::connect(A.getserial(),SIGNAL(readyRead()),this,SLOT(update_label()));
+
+    playermusic = new QMediaPlayer;
+    playermusic1 = new QMediaPlayer;
+    player = new QMediaPlayer;
+    QPixmap pix("../img2.png");
+    ui->label->setPixmap(pix);
+   // ui->setupUi(this);
+    //ui->setupUi(this);
     ui->tableView->setModel(Pr.afficherproduit());
 }
 
@@ -192,9 +212,8 @@ void MainWindow::on_pushButton_7_clicked()
     layout->addWidget(NULL, 1, 0); // Bottom-Left
     layout->addWidget(NULL, 1, 1); // Bottom-Right
     ui->tab_2->setLayout(layout);
-
 }*/
-void MainWindow::on_tableWidget_cellClicked(int row, int column)
+void MainWindow::on_tableWidget_cellClicked(int , int)
 {
     qDeleteAll(ui->tabWidget->widget(0)->children());
     QWidget* piestats = new QWidget(this);
@@ -222,3 +241,110 @@ void MainWindow::on_tabWidget_tabBarClicked(int)
     ui->s->setLayout(layout1);
 }
 
+
+bool MainWindow::checkUIDInBase(int id) {
+  QSqlDatabase::database().transaction();
+  QString query = "select * from employe where id_emp = :id";
+  QSqlQuery q;
+  q.prepare(query);
+  q.bindValue(":id", id);
+  q.exec();
+  QSqlDatabase::database().commit();
+  return q.first();
+}
+
+QString MainWindow::getIdAndNameEmp(int id) {
+    QSqlDatabase::database().transaction();
+    QString query = "select nom_emp from employe where id_emp = :id";
+    QSqlQuery q;
+    q.prepare(query);
+    q.bindValue(":id", id);
+    q.exec();
+    QSqlDatabase::database().commit();
+    q.next();
+    QString name = q.value(0).toString();
+
+    return "id:"+QString::number(id) + " Name:" +name;
+}
+
+
+void MainWindow::update_label()
+{
+    data=A.read_from_arduino();
+    qDebug() << "Data: " << data.toInt();
+
+
+    bool exist = checkUIDInBase(data.toInt());
+    if(exist) {
+
+        QString user = getIdAndNameEmp(data.toInt());
+        A.write_to_arduino(user.toUtf8());
+        playermusic1->stop();
+         ui->label_4->setText("access") ;
+    } else {
+
+
+
+        A.write_to_arduino("d");
+                    playermusic1->setMedia(QUrl::fromLocalFile("C:/Users/seifa.AFI/OneDrive/Bureau/qt/ringing.mp3"));
+                        playermusic1->play();
+                           qDebug() << playermusic1->errorString();
+                    ui->label_4->setText("WARNING!! \n indifined card!!");
+    };
+    /*if(data== access)
+       {
+
+
+        }
+    else
+    {
+        playermusic1->setMedia(QUrl::fromLocalFile("C:/Users/seifa.AFI/OneDrive/Bureau/qt/ringing.mp3"));
+            playermusic1->play();
+               qDebug() << playermusic1->errorString();
+        ui->label_4->setText("WARNING!! \n indifined cart!!");
+
+    }*/
+}
+
+
+void MainWindow::on_pushButton_open_clicked()
+{
+    player->setMedia(QUrl::fromLocalFile("C:/Users/seifa.AFI/OneDrive/Bureau/qt/son.Wav"));
+        player->play();
+           qDebug() << player->errorString();
+}
+
+void MainWindow::on_pushButton_close_clicked()
+{
+    player->setMedia(QUrl::fromLocalFile("C:/Users/seifa.AFI/OneDrive/Bureau/qt/son.Wav"));
+        player->play();
+           qDebug() << player->errorString();
+        close();
+}
+
+void MainWindow::on_pushButton_start_clicked()
+{
+    playermusic->setMedia(QUrl::fromLocalFile("C:/Users/seifa.AFI/OneDrive/Bureau/qt/Breaking News.Mp3"));
+        playermusic->play();
+           qDebug() << playermusic->errorString();
+}
+
+void MainWindow::on_pushButton_pause_clicked()
+{
+    playermusic->pause();
+}
+
+void MainWindow::on_pushButton_10_clicked()
+{
+    playermusic->setMedia(QUrl::fromLocalFile("C:/Users/seifa.AFI/OneDrive/Bureau/qt/alert.mp3"));
+        playermusic->play();
+           qDebug() << playermusic->errorString();
+     A.write_to_arduino("0"); //envoyer 1 à arduino
+}
+
+void MainWindow::on_pushButton_11_clicked()
+{
+    playermusic->stop();
+    A.write_to_arduino("1");
+      ui->label_4->setText("loading");
+}
