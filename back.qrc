@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>15190.jpg</file>
+        <file>alert.mp3</file>
+        <file>ringing.mp3</file>
     </qresource>
 </RCC>
