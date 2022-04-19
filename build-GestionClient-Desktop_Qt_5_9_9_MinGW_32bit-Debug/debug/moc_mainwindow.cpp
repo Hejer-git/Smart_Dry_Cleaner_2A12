@@ -22,7 +22,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[17];
-    char stringdata0[365];
+    char stringdata0[362];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,7 +47,7 @@ QT_MOC_LITERAL(12, 251, 23), // "on_Button_triId_clicked"
 QT_MOC_LITERAL(13, 275, 23), // "on_Button_triPt_clicked"
 QT_MOC_LITERAL(14, 299, 26), // "on_pushButton_extr_clicked"
 QT_MOC_LITERAL(15, 326, 26), // "on_pushButton_mail_clicked"
-QT_MOC_LITERAL(16, 353, 11) // "mail_envoye"
+QT_MOC_LITERAL(16, 353, 8) // "mailSent"
 
     },
     "MainWindow\0on_pushButton_ajouter_clicked\0"
@@ -59,7 +59,7 @@ QT_MOC_LITERAL(16, 353, 11) // "mail_envoye"
     "on_Button_rechNum_clicked\0"
     "on_Button_triId_clicked\0on_Button_triPt_clicked\0"
     "on_pushButton_extr_clicked\0"
-    "on_pushButton_mail_clicked\0mail_envoye"
+    "on_pushButton_mail_clicked\0mailSent"
 };
 #undef QT_MOC_LITERAL
 
@@ -90,7 +90,7 @@ static const uint qt_meta_data_MainWindow[] = {
       13,    0,   98,    2, 0x08 /* Private */,
       14,    0,   99,    2, 0x08 /* Private */,
       15,    0,  100,    2, 0x08 /* Private */,
-      16,    0,  101,    2, 0x08 /* Private */,
+      16,    1,  101,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -106,7 +106,7 @@ static const uint qt_meta_data_MainWindow[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::QString,    2,
 
        0        // eod
 };
@@ -130,7 +130,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 10: _t->on_Button_triPt_clicked(); break;
         case 11: _t->on_pushButton_extr_clicked(); break;
         case 12: _t->on_pushButton_mail_clicked(); break;
-        case 13: _t->mail_envoye(); break;
+        case 13: _t->mailSent((*reinterpret_cast< QString(*)>(_a[1]))); break;
         default: ;
         }
     }

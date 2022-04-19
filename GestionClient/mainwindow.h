@@ -46,7 +46,7 @@ private slots:
     void on_pushButton_extr_clicked();
 
     void on_pushButton_mail_clicked();
-    void mail_envoye();
+    void mailSent(QString);
 
 private:
     Ui::MainWindow *ui;

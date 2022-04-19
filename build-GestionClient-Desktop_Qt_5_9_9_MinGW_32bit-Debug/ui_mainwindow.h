@@ -13,7 +13,6 @@
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
-#include <QtWidgets/QComboBox>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -37,11 +36,11 @@ public:
     QPushButton *pushButton_extr;
     QGroupBox *groupBox_8;
     QPushButton *pushButton_mail;
-    QComboBox *rcpt;
     QLineEdit *subject;
     QPlainTextEdit *msg;
     QLabel *label_11;
     QLabel *label_12;
+    QLineEdit *rcpt;
     QGroupBox *groupBox_11;
     QPushButton *Button_triId;
     QPushButton *Button_triN;
@@ -134,18 +133,6 @@ public:
 "  border-radius : 16px;\n"
 "background-color: rgb(0, 74, 108);"));
         pushButton_mail->setAutoDefault(false);
-        rcpt = new QComboBox(groupBox_8);
-        rcpt->setObjectName(QStringLiteral("rcpt"));
-        rcpt->setGeometry(QRect(150, 40, 361, 31));
-        QSizePolicy sizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(rcpt->sizePolicy().hasHeightForWidth());
-        rcpt->setSizePolicy(sizePolicy);
-        rcpt->setMouseTracking(false);
-        rcpt->setFocusPolicy(Qt::StrongFocus);
-        rcpt->setStyleSheet(QLatin1String("border: 2px solid black;\n"
-"border-radius: 10px;"));
         subject = new QLineEdit(groupBox_8);
         subject->setObjectName(QStringLiteral("subject"));
         subject->setGeometry(QRect(150, 80, 361, 31));
@@ -163,6 +150,11 @@ public:
         label_12 = new QLabel(groupBox_8);
         label_12->setObjectName(QStringLiteral("label_12"));
         label_12->setGeometry(QRect(40, 40, 111, 31));
+        rcpt = new QLineEdit(groupBox_8);
+        rcpt->setObjectName(QStringLiteral("rcpt"));
+        rcpt->setGeometry(QRect(150, 40, 361, 31));
+        rcpt->setStyleSheet(QLatin1String("border: 2px solid black;\n"
+"border-radius: 10px;"));
         groupBox_11 = new QGroupBox(centralwidget);
         groupBox_11->setObjectName(QStringLiteral("groupBox_11"));
         groupBox_11->setGeometry(QRect(590, 450, 311, 241));

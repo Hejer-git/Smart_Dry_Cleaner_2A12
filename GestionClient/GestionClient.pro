@@ -31,20 +31,25 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    arduino.cpp \
     client.cpp \
         main.cpp \
         mainwindow.cpp \
     connection.cpp \
+    smartinterface.cpp \
     smtp.cpp
 
 HEADERS += \
+    arduino.h \
     client.h \
         mainwindow.h \
     connection.h \
+    smartinterface.h \
     smtp.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+        smartinterface.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

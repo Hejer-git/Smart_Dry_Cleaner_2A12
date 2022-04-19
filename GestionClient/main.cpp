@@ -3,13 +3,17 @@
 #include <QMessageBox>
 #include "connection.h"
 #include "client.h"
+#include "smartinterface.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     Connection c;
+    SmartInterface s;
     bool test=c.createconnection();
     MainWindow w;
+    s.show();
+    return a.exec();
 
     if(test) //si la connexion est établie
     {w.show();

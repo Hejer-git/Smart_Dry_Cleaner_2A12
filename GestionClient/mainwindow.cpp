@@ -187,21 +187,21 @@ void MainWindow::on_pushButton_extr_clicked()
                   ui->textEdit->print(&printer);
 }
 
-void MainWindow::mail_envoye()
-{
-    QSystemTrayIcon *notifyIcon = new QSystemTrayIcon;
-    notifyIcon->show();
-    notifyIcon->showMessage("","Votre Mail est envoyé :)",QSystemTrayIcon::Information,15000);
-}
-
-
 void MainWindow::on_pushButton_mail_clicked()
 {
     Smtp* smtp = new Smtp("hejerbenyacoub0@gmail.com","hejerbenyacoub","smtp.gmail.com",465);
-     connect(smtp, SIGNAL(status(QString)), this, SLOT(mail_envoye()));
+     connect(smtp, SIGNAL(status(QString)), this, SLOT(mailSent()));
 
-    smtp->sendMail("hejerbenyacoub0@gmail.com","amirasoua9@gmail.com",ui->subject->text(),ui->msg->toPlainText());
+    smtp->sendMail("hejerbenyacoub0@gmail.com",ui->rcpt->text(),ui->subject->text(),ui->msg->toPlainText());
 }
 
 
+void MainWindow::mailSent(QString status)
+{
+    if(status == "Message sent")
+        QMessageBox::warning( 0, tr( "Qt Simple SMTP client" ), tr( "Message sent!\n\n" ) );
+    ui->rcpt->clear();
+    ui->subject->clear();
 
+    ui->msg->clear();
+}
