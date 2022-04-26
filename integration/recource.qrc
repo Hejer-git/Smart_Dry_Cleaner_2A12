@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>15190.jpg</file>
+        <file>Artboard-35-ConvertImage.png</file>
+        <file>alert.mp3</file>
+        <file>Breaking News.mp3</file>
+        <file>ringing.mp3</file>
+        <file>son.wav</file>
+        <file>gc.png</file>
+        <file>ge.jpg</file>
+        <file>gm.webp</file>
+        <file>gcc-ConvertImage (2).jpg</file>
+        <file>gl-ConvertImage (1).jpg</file>
+        <file>gp-ConvertImage (1).jpg</file>
+        <file>silent-ConvertImage (1).png</file>
+        <file>sound-ConvertImage (2).png</file>
+    </qresource>
+</RCC>
